@@ -1,0 +1,43 @@
+# De una empresa de transporte se quiere guardar el nombre de los conductores que 
+# tiene, y los kilómetros que conducen cada día de la semana.
+# Para guardar esta información se van a utilizar dos arreglos:
+#  * Nombre: Vector para guardar los nombres de los conductores.
+#  * kms: Tabla para guardar los kilómetros que realizan cada día de la semana.
+# Se quiere generar un nuevo vector ("total_kms") con los kilómetros totales que 
+# realza cada conductor.
+# Al finalizar se muestra la lista con los nombres de conductores y los kilómetros 
+# que ha realizado.
+
+nombre = [""] * 10
+kms = [[0.0] * 8 for _ in range(10)]
+dias = [""] * 7
+
+tam_conducto_max = 10
+dias[0] = "Lunes"
+dias[1] = "Martes"
+dias[2] = "Miercoles"
+dias[3] = "Jueves"
+dias[4] = "Viernes"
+dias[5] = "Sabado"
+dias[6] = "Domingo"
+
+while True:
+    num_conductores = int(input("¿Cuantos conductores tiene la empresa?: "))
+    
+    if num_conductores>tam_conducto_max:
+        print(f"Como maximo puedo guardar la indormacion de {tam_conducto_max} conductores")
+    if num_conductores <=tam_conducto_max:
+        break
+
+for indice_cond in range(num_conductores):
+    nombre[indice_cond] = input(f"Nombre del conductor {indice_cond+1}: ")
+    for indice_dias in range(6):
+        kms[indice_cond][indice_dias] = input(f"¿Cuantos km ha realizado el {dias[indice_dias]}?: ")
+
+for indice_cond in range(num_conductores):
+    kms[indice_cond][7] = 0
+    for indice_dias in range(6):
+        kms[indice_cond][7] = kms[indice_cond][7] + kms[indice_cond][indice_dias]
+
+for indice_cond in range(num_conductores):
+    print(f"{nombre[indice_cond]} ha realizado {kms[indice_cond][7]} kms")
