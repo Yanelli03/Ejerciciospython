@@ -1,13 +1,9 @@
 # Diseñar el algoritmo correspondiente a un programa, que:
-#  * Crea una tabla bidimensional de longitud 5x15 y nombre 'marco'.
-#  * Carga la tabla con dos únicos valores 0 y 1, donde el valor uno ocupará las 
-# posiciones o elementos que delimitan la tabla, es decir, las más externas, 
-# mientras que el resto de los elementos contendrán el valor 0.
-#  * Visualiza el contenido de la matriz en pantalla.
-
-matriz = [[0.0] * 15 for _ in range(5)]
+# * Crea una tabla bidimensional de longitud 5x15 y nombre 'marco'.
+# * Carga la tabla con dos únicos valores 0 y 1, donde el valor uno ocupará las posiciones o elementos que delimitan la tabla, es decir, las más externas, 
 num_filas = 5
 num_cols = 15
+matriz = [[0.0] * 15 for _ in range(5)]
 
 for fila in range(num_filas):
     for col in range(num_cols):
@@ -15,8 +11,7 @@ for fila in range(num_filas):
             matriz[fila][col] = 1
         else:
             matriz[fila][col] = 0
-
 for fila in range(num_filas):
     for col in range(num_cols):
         print(matriz[fila][col])
-    print("")
+    print('')

@@ -1,13 +1,10 @@
-# Se quiere realizar un programa que lea por teclado las 5 notas obtenidas por un 
-# alumno (comprendidas entre 0 y 10). A continuación debe mostrar todas las notas, 
-# la nota media, la nota más alta que ha sacado y la menor.
-
+# Se quiere realizar un programa que lea por teclado las 5 notas obtenidas por un alumno (comprendidas entre 0 y 10). A continuación debe mostrar todas las notas, la nota media, la nota más alta que ha sacado y la menor.
 tam_notas = 5
-notas = [0] * tam_notas
+notas = [0] * 5
 
 for indice in range(tam_notas):
     while True:
-        nota = int(input(f"Introduce la nota {indice+1}: "))
+        nota = int(input(f'Introduce la nota {indice+1}: '))
         if 0 <= nota <= 10:
             notas[indice] = nota
             break
@@ -24,11 +21,10 @@ for indice in range(tam_notas):
         nota_min = notas[indice]
 
 nota_media = suma / tam_notas
-
-print("\nNotas:" )
+print('\nNotas:' )
 for indice in range(tam_notas):
     print(notas[indice])
 print()
-print("Nota media:", nota_media)
-print("Nota máxima:", nota_max)
-print("Nota mínima:", nota_min)
+print(f'Nota medía: {nota_media}')
+print(f'Nota máxima: {nota_max}')
+print(f'Nota mínima: {nota_min}')
